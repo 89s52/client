@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/user', function(req, res, next) {
-  res.send('user');
+  res.send('ADNIN-user');
 });
 
 module.exports = router;
