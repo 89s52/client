@@ -42,5 +42,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-mongoose.connect('mongodb://0.0.0.0:27017/test')
+mongoose.connect('mongodb://0.0.0.0:27017/test',function(err){
+    if(err){
+      console.log('数据库连接失败')
+    }else{
+      console.log('数据库连接成功')
+    }
+});
 module.exports = app;
