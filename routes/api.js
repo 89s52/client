@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/user', function(req, res, next) {
-  res.send('API-user');
+router.post('/user/register', function(req, res, next) {
+  console.log('register');
 });
 
 module.exports = router;
