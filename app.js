@@ -10,7 +10,7 @@ var mongoose = require('./config/mongoose.js');
 var db = mongoose();
 
 var indexRouter = require('./routes/index');
-var adminRouter = require('./routes/users');
+var users = require('./routes/users');
 var apiRouter = require('./routes/api');
 
 var app = express();
