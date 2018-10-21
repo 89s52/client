@@ -13,6 +13,11 @@ router.get('/test', function(req, res, next){
   var user = new User({
     uid: 1,
     username: 'Sid'
+    userID:123456,
+    username: 'Sid',
+    createTime: Date,
+    loastLogin: Date,
+    comment:'asdcccccc'
   });
 
   user.save(function(err){
