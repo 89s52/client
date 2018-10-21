@@ -1,4 +1,4 @@
-var createError = require('http-errors');
+﻿var createError = require('http-errors');
 var express = require('express');
 var mongoose = require('mongoose');
 var path = require('path');
@@ -6,10 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var adminRouter = require('./routes/admin');
-var apiRouter = require('./routes/api');
+var mongoose = require('./config/mongoose.js');
+var db = mongoose();
 
+var indexRouter = require('./routes/index');
+var adminRouter = require('./routes/users');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -26,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyparser.urlencoded({extended:true}));
 
 app.use('/', indexRouter);
-app.use('/admin', adminRouter);
+app.use('/users', users);
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
@@ -45,11 +47,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-mongoose.connect('mongodb://0.0.0.0:27017/test',function(err){
-    if(err){
-      console.log('数据库连接失败')
-    }else{
-      console.log('数据库连接成功')
-    }
-});
 module.exports = app;

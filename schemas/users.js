@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 
 module.exports = new mongoose.Schema({
     userID:Number,
-    name:String,
+    username: String,
+    createTime: Date,
+    loastLogin: Date,
     comment:String
 });
