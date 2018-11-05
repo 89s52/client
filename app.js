@@ -11,6 +11,7 @@ var db = mongoose();
 
 var indexRouter = require('./routes/index');
 var user = require('./routes/users');
+var stockmarket = require('./routes/stock.market');
 var apiRouter = require('./routes/api');
 
 var app = express();
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/user', user);
+app.use('/stockmarket', stockmarket);
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
