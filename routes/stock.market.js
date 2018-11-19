@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/add', function(req, res, next){
+router.get('/test', function(req, res, next){
   // 数据集
   var content = {
   code: "10000",
